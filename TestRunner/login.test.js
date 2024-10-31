@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import storeToken from '../Config/setEnvVar.js';
 dotenv.config();
 
-let token ="";
+//let token ="";
 describe("User can do login", async () => {
     it("User login with valid creds", async () => {
         const {data} = await axios.post(`${process.env.base_url}/user/login`, {
@@ -22,7 +22,7 @@ describe("User can do login", async () => {
 
         expect(data.message).to.contains("Login successful");
         storeToken('token', data.token);
-      
+        //token = data.token
 
     });
 });
